@@ -1,0 +1,53 @@
+/* styles.css — versión corregida y comentada */
+
+/* reset y caja */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* cuerpo: centrado y fondo agradable */
+html, body {
+	height: 100%;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(180deg, #e6f0ff 0%, #7aa7ff 50%, #2b6fd6 100%);
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* lienzo (canvas) — tamaño, borde y que sea responsivo */
+canvas {
+	display: block;                 /* quita espacios en línea */
+	width: 500px;                   /* tamaño visual inicial */
+	height: 500px;                  /* tamaño visual inicial */
+	max-width: 95vw;                /* responsivo en pantallas pequeñas */
+	max-height: 85vh;
+	border: 2px solid #ff8dc7;
+	border-radius: 12px;
+	background: linear-gradient(180deg, #dfefff 0%, #c7ddff 60%, #b6d4ff 100%); /* color interno azul metálico */
+	box-shadow: 0 8px 30px rgba(20,10,25,0.06);
+}
+
+/* clase auxiliar para centrar un contenedor del canvas (si lo usas) */
+.stage {
+	padding: 18px;
+	border-radius: 14px;
+	background: rgba(255,255,255,0.65);
+	backdrop-filter: blur(3px);
+	box-shadow: 0 10px 30px rgba(10,20,30,0.08);
+}
+
+/* accesibilidad: foco visible si el canvas recibe tab */
+canvas:focus {
+	outline: 3px solid rgba(255,140,199,0.25);
+	outline-offset: 4px;
+}
